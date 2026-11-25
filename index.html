@@ -307,7 +307,8 @@ const LEGS = {
   'cam-gt':{to:'gt', mode:'transfer', text:'Cameron Highlands → George Town', when:'29 dic, ripartenza mattina, arrivo in serata', status:'manca', note:'Mezzo e orari da definire.'},
   'gt-lgk':{to:'lgk', mode:'boat', text:'George Town → Langkawi', when:'31 dic', status:'manca', note:'Mezzo e orario da scegliere.'},
   'lgk-kl':{to:'kul2', mode:'flight', text:'Langkawi → Kuala Lumpur', when:'3 gen, ripartenza mattina', status:'manca', note:'Mezzo e orari da definire.'},
-  'kl-rm':{to:'rome', mode:'flight', text:'Volo Kuala Lumpur → Roma o Milano', when:'5 gen', status:'manca', note:'Destinazione, voli e orari non ancora nel documento.'}
+  'kl-dxb':{to:'rome', mode:'flight', text:'Volo Emirates EK345 Kuala Lumpur → Dubai', when:'5 gen, partenza 10:15, arrivo 13:20 (ora di Dubai)', note:'Diretto, Airbus A350-900, 7 h 05 min, Economy Flex. Confermato.'},
+  'dxb-it':{to:'rome', mode:'flight', text:'Volo Dubai → Roma o Milano', when:'5 gen', status:'manca', note:'Il volo da Dubai per l’Italia non è ancora nel documento.'}
 };
 const PROG = (text, note) => ({type:'do', text: text||'Programma della giornata', status:'manca', note: note||'Cosa fare: da definire.'});
 
@@ -364,7 +365,7 @@ const DAYS = [
   {d:'2027-01-02', stop:'lgk', sleep:'lgk', title:'Langkawi', items:[PROG('Giornata a Langkawi'), {type:'eat', text:'Dove mangiare', note:'5 posti salvati.', go:'cibo', stop:'lgk'}]},
   {d:'2027-01-03', stop:'lgk', sleep:'kul2', title:'Rientro a Kuala Lumpur', items:[{leg:'lgk-kl'}]},
   {d:'2027-01-04', stop:'kul2', sleep:'kul2', title:'Ultimo giorno a Kuala Lumpur', items:[PROG('Giornata a Kuala Lumpur')]},
-  {d:'2027-01-05', stop:'kul2', sleep:null, title:'Volo di ritorno', items:[{leg:'kl-rm'}]}
+  {d:'2027-01-05', stop:'kul2', sleep:null, title:'Volo di ritorno', items:[{leg:'kl-dxb', t:['10:15','13:20']}, {leg:'dxb-it'}]}
 ];
 
 const DOC_URL = 'https://docs.google.com/document/d/1Ulpk-UXLIDt4eeCaergt1WrWdsOo_rnb/edit';
@@ -612,7 +613,7 @@ function renderStops(){
     html += '<div class="node" style="--city:'+cityVar(id)+'"><div class="stop"><div class="stop-h"><h3 class="stop-name">'+esc(s.name)+'</h3><span class="stop-dates">'+esc(s.dates)+'</span></div>'+
       '<div class="stop-sub">'+esc(s.sub||'')+'</div>'+nights+'<div class="stop-rows">'+stay+plan+tips+food+'</div></div></div>';
   });
-  html += legHTML('kl-rm');
+  html += legHTML('kl-dxb') + legHTML('dxb-it');
   html += '<div class="node end" style="--city:var(--c-rome)"><b>Roma o Milano</b> <span class="stop-sub">arrivo 5 gennaio</span></div></div>';
   document.getElementById('v-tappe').innerHTML = html;
 }
