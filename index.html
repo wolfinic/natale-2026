@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Natale in Malesia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* VOICE everyday travel companion, warm and clear, opened on a phone mid-trip
+   IDEA a Peranakan postcard: dawn sky, then the route drawn as one landscape strip
+   PICTURE the 15 nights as a panorama at true scale: Shenzhen towers, KL twin towers, jungle, tea hills, shophouses, Langkawi sea
+   COLOUR dawn pink to saffron sky, jade land, cobalt sea, Peranakan pink-red accent; night is indigo with stars
+   TYPE Fraunces for names and big date numerals, Figtree for everything else
+   LAYOUT one column: title on the sky, panorama, stop chips, sticky day strip, days grouped under full-width stop bands, tab bar at the bottom */
+:root{color-scheme:light dark;
+  --bg:light-dark(#FFFFFF,#12142A); --ink:light-dark(#1A1B2E,#ECEAF4); --muted:light-dark(#5D6075,#A6A9BF);
+  --line:light-dark(#ECE8EF,#262946); --soft:light-dark(#F6F3F8,#1A1D37); --surface:light-dark(#FFFFFF,#171A33);
+  --accent:light-dark(#C7325F,#FF8FB0); --on-accent:light-dark(#FFFFFF,#22101A); --link:light-dark(#1D58A8,#93BBFF);
+  --sky-a:light-dark(#F8C3CF,#191C46); --sky-b:light-dark(#FFE6BC,#43306A); --sun:light-dark(#FFB443,#F3E9CC); --star:light-dark(transparent,#FFFFFFAA);
+  --far:light-dark(#A9D3C2,#2A4552); --land:light-dark(#2E7C67,#1B3E3A); --land-d:light-dark(#1D5A4A,#122C29); --land-l:light-dark(#4A9C80,#28564E);
+  --tower:light-dark(#3A4572,#0D1130); --tower-l:light-dark(#56649A,#1E2552); --win:light-dark(transparent,#FFD27A);
+  --tea:light-dark(#6EA548,#2F5426); --tea-l:light-dark(#97C670,#45733A);
+  --sea:light-dark(#2F84C4,#1A3B6E); --sea-d:light-dark(#1E5F9C,#0F2549); --sand:light-dark(#F3D9A4,#5A4A33);
+  --h1:light-dark(#F49FB4,#9A5168); --h2:light-dark(#6CC3B4,#2F6E66); --h3:light-dark(#F6C35B,#8C6A26); --h4:light-dark(#93ADE8,#3C548F); --roof:light-dark(#C2553C,#7A3426); --arch:light-dark(#FFFFFF,#E9DFC2);
+  --route:light-dark(#FFFFFFCC,#FFFFFF88);
+  --miss:light-dark(#8A4B00,#F3C162); --miss-bg:light-dark(#FFF1D2,#33270E); --miss-line:light-dark(#E0AA45,#7C5C1F);
+  --dec:light-dark(#53379F,#BDA9F6); --dec-bg:light-dark(#F0EAFC,#272043); --dec-line:light-dark(#B6A2EC,#5A4A93);
+  --ver:light-dark(#A2221A,#FF8F86); --ver-bg:light-dark(#FDE7E4,#3A1A18); --ver-line:light-dark(#E9A29A,#80372F);
+  --c-rome:light-dark(#6B6E80,#A6A9BF); --c-szx:light-dark(#C8372D,#FF8577); --c-hkg:light-dark(#8E3A8A,#E08FDC); --c-kul:light-dark(#2E56A6,#8CAEF5);
+  --c-tn:light-dark(#1F7A50,#6FCB96); --c-cam:light-dark(#5E8A1E,#AFD16A); --c-gt:light-dark(#B06200,#F0B45A); --c-lgk:light-dark(#0A7F86,#5CCFD2);
+  --on-city:light-dark(#FFFFFF,#12142A);
+  --display:"Fraunces",Georgia,serif; --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:max(16px,env(safe-area-inset-left,0px));
+}
+:root[data-theme=light]{color-scheme:light}
+:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--body);overflow-x:clip;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+a{color:var(--link)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+.wrap{max-width:680px;margin:0 auto;padding-left:var(--gut);padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--sky-a),var(--sky-b));padding-top:calc(env(safe-area-inset-top,0px) + 22px);color:var(--ink)}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(36px,10vw,52px);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.dates{font-size:17px;font-weight:600;margin:8px 0 0}
+.facts{display:flex;flex-wrap:wrap;gap:4px 14px;margin:6px 0 0;font-size:14px;color:color-mix(in srgb,var(--ink) 75%,transparent)}
+.facts b{font-weight:700;color:var(--ink)}
+.todo{display:inline-flex;align-items:center;gap:8px;margin-top:14px;min-height:40px;padding:6px 14px 6px 8px;border-radius:999px;border:0;background:var(--ink);color:var(--bg);font-size:14px;font-weight:600;cursor:pointer}
+.todo b{display:grid;place-items:center;min-width:26px;height:26px;padding:0 6px;border-radius:999px;background:var(--miss-line);color:#2A1A00;font-size:13.5px;font-variant-numeric:tabular-nums}
+.scene{position:relative;height:clamp(150px,36vw,210px);margin-top:10px}
+.scene svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* Striscia date */
+.strip{position:sticky;top:0;z-index:6;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 92%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.strip-scroll{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 16px;max-width:680px;margin:0 auto;scroll-padding-inline:16px}
+.strip-scroll::-webkit-scrollbar{display:none}
+.mon{flex:none;writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;font-weight:700;color:var(--muted);text-align:center}
+.pill{flex:none;position:relative;display:grid;justify-items:center;gap:2px;width:46px;padding:6px 0 8px;border-radius:14px;background:var(--surface);border:1px solid var(--line);cursor:pointer}
+.pill .dw{font-size:13px;font-weight:500;color:var(--muted)}
+.pill .dn{font-family:var(--display);font-size:19px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.pill .dot{width:18px;height:4px;border-radius:2px;background:var(--city)}
+.pill.miss::after{content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--miss-line)}
+.pill.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.pill.on .dw{color:inherit;opacity:.75}
+.pill.today{box-shadow:0 0 0 2px var(--accent)}
+
+/* Viste */
+.view{padding-block:8px}
+.view-h{font-family:var(--display);font-size:32px;font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:20px 0 6px}
+.view-p{margin:0 0 18px;color:var(--muted);font-size:15px;max-width:60ch}
+
+/* Bande tappa */
+.runh{margin-inline:calc(50% - 50vw);padding:18px max(16px,calc(50vw - 324px)) 14px;background:color-mix(in srgb,var(--city) 13%,var(--bg));margin-top:14px;display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:end;scroll-margin-top:calc(env(safe-area-inset-top,0px) + 80px)}
+.runh:first-child{margin-top:0}
+.runh h2{font-family:var(--display);font-size:28px;font-weight:700;line-height:1.05;letter-spacing:-.015em;margin:0;color:var(--city)}
+.runh p{margin:0;font-size:14px;color:var(--muted)}
+.runh .rd{grid-row:1/3;grid-column:2;text-align:right;font-size:14px;font-weight:600;white-space:nowrap}
+.moons{display:flex;justify-content:flex-end;gap:3px;margin-top:4px}
+.moons i{width:12px;height:12px;border-radius:50%;background:var(--city);-webkit-mask:radial-gradient(circle at 72% 32%,transparent 44%,#000 46%);mask:radial-gradient(circle at 72% 32%,transparent 44%,#000 46%)}
+
+/* Giorno */
+.day{display:grid;grid-template-columns:58px minmax(0,1fr);gap:0 12px;padding:16px 0 6px;border-bottom:1px solid var(--line);scroll-margin-top:calc(env(safe-area-inset-top,0px) + 80px)}
+.day:last-child{border-bottom:0}
+.dnum{display:grid;justify-items:start;align-content:start;padding-top:2px}
+.dnum .n{font-family:var(--display);font-size:42px;font-weight:700;line-height:.9;color:var(--city);font-variant-numeric:tabular-nums}
+.dnum .w{font-size:14px;font-weight:600;margin-top:4px}
+.dnum .m{font-size:13px;color:var(--muted)}
+.day.today .dnum .n{color:var(--accent)}
+.dtop{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:13px;color:var(--muted)}
+.tag{font-size:13px;font-weight:700;padding:1px 9px;border-radius:999px;background:var(--accent);color:var(--on-accent)}
+.tag.oggi{background:var(--ink);color:var(--bg)}
+.dtitle{font-family:var(--display);font-size:21px;font-weight:600;line-height:1.2;margin:2px 0 0;text-wrap:balance}
+.dwhere{font-size:14px;color:var(--muted)}
+.items{list-style:none;margin:8px 0 0;padding:0}
+.it{display:grid;grid-template-columns:46px minmax(0,1fr);gap:8px;padding:9px 0}
+.tm{display:grid;align-content:start;padding-top:1px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tm b{font-size:15px;font-weight:700;color:var(--city)}
+.tm span{font-size:13px;color:var(--muted)}
+.dsub{font-size:15px;font-weight:600;margin-top:2px}
+.dintro{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.45}
+.tips{margin:4px 0 0;padding-left:18px;display:grid;gap:6px;font-size:14px;line-height:1.45}
+.ic{width:32px;height:32px;border-radius:50%;background:color-mix(in srgb,var(--city) 12%,var(--bg));color:var(--city);display:grid;place-items:center}
+.ic svg{width:17px;height:17px}
+.it-body{display:grid;gap:4px;align-content:center}
+.it-text{font-weight:600;line-height:1.35}
+.it-when{color:var(--muted);font-size:14px}
+.it-note{font-size:14px;color:var(--muted);line-height:1.4}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.st{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;padding:1px 10px 1px 8px;border-radius:999px;border:1px dashed;white-space:nowrap}
+.st::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.st.manca{color:var(--miss);background:var(--miss-bg);border-color:var(--miss-line)}
+.st.decidere{color:var(--dec);background:var(--dec-bg);border-color:var(--dec-line)}
+.st.verificare{color:var(--ver);background:var(--ver-bg);border-color:var(--ver-line)}
+.lnk{display:inline-flex;align-items:center;gap:5px;min-height:34px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14px;font-weight:600;color:var(--link);text-decoration:none;cursor:pointer}
+.lnk svg{width:14px;height:14px}
+.lnk:active{background:var(--soft)}
+
+/* Tappe */
+.route-v{position:relative;display:grid;padding-left:30px}
+.route-v::before{content:"";position:absolute;left:10px;top:14px;bottom:14px;width:3px;border-radius:2px;background:linear-gradient(var(--c-szx),var(--c-kul),var(--c-tn),var(--c-cam),var(--c-gt),var(--c-lgk),var(--c-kul))}
+.node{position:relative;margin-block:6px}
+.node::before{content:"";position:absolute;left:-27px;top:18px;width:17px;height:17px;border-radius:50%;background:var(--city);box-shadow:0 0 0 4px var(--bg)}
+.node.end{padding:6px 0}
+.node.end::before{top:9px;background:var(--bg);border:3px solid var(--city)}
+.node.end b{font-family:var(--display);font-size:20px}
+.stop{border-radius:18px;padding:14px 16px;background:color-mix(in srgb,var(--city) 9%,var(--bg))}
+.stop-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 10px}
+.stop-name{font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:-.01em;margin:0;color:var(--city)}
+.stop-sub{font-size:14px;color:var(--muted)}
+.stop-dates{font-size:14px;font-weight:700;white-space:nowrap}
+.nights{display:flex;gap:3px;margin:6px 0 0;align-items:center;font-size:13px;color:var(--muted)}
+.nights i{width:13px;height:13px;border-radius:50%;background:var(--city);-webkit-mask:radial-gradient(circle at 72% 32%,transparent 44%,#000 46%);mask:radial-gradient(circle at 72% 32%,transparent 44%,#000 46%)}
+.nights span{margin-left:4px}
+.stop-rows{display:grid;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid color-mix(in srgb,var(--city) 22%,transparent)}
+.srow{display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;font-size:15px}
+.srow .si{color:var(--city);padding-top:1px}
+.srow .si svg{width:18px;height:18px}
+.srow-l{font-size:13px;font-weight:600;color:var(--muted)}
+.leg{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:10px 0}
+.leg .ic{width:28px;height:28px;color:var(--muted);background:var(--soft)}
+.leg .ic svg{width:15px;height:15px}
+.leg-t{font-size:15px;font-weight:600}
+.leg-w{font-size:14px;color:var(--muted)}
+.ideas{margin-top:26px;border-radius:18px;padding:16px;background:var(--dec-bg)}
+.ideas h3{font-family:var(--display);font-size:21px;margin:0 0 2px}
+.ideas ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.ideas li{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center;font-size:15px}
+.ideas li b{font-weight:700}
+details{margin-top:14px;border-top:1px solid var(--dec-line);padding-top:8px}
+summary{cursor:pointer;font-weight:600;font-size:15px;color:var(--dec);min-height:40px;display:flex;align-items:center}
+.alt{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:4px;font-size:15px}
+.alt li{display:grid;grid-template-columns:max-content 1fr;gap:12px}
+.alt span{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* Cibo e mancanti */
+.sec{margin-bottom:24px;scroll-margin-top:calc(env(safe-area-inset-top,0px) + 16px)}
+.sec-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:0 0 8px;font-family:var(--display);font-size:22px;font-weight:700;color:var(--city)}
+.sec-h small{font-family:var(--body);font-size:14px;font-weight:500;color:var(--muted)}
+.list{border-top:3px solid var(--city)}
+.rest{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.rest-n{font-weight:700;line-height:1.3}
+.rest-d{font-size:14px;color:var(--muted);line-height:1.45;margin-top:2px}
+.rest .st{margin-top:6px}
+.empty{padding:12px 0;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:15px;color:var(--muted);border-bottom:1px solid var(--line)}
+.sum{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;align-items:center;border-radius:18px;padding:16px;margin-bottom:24px;background:var(--miss-bg)}
+.sum b{grid-row:1/3;font-family:var(--display);font-size:64px;font-weight:700;line-height:.9;color:var(--miss);font-variant-numeric:tabular-nums}
+.sum p{margin:0;font-size:15px}
+.mrow{display:grid;grid-template-columns:58px minmax(0,1fr);gap:12px;align-items:start;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:12px 0;cursor:pointer}
+.mrow:active{background:var(--soft)}
+.mdate{font-size:13px;font-weight:700;color:var(--muted);padding-top:2px;white-space:nowrap}
+.mtext{display:block;font-weight:600;font-size:15px;line-height:1.35}
+.mnote{display:block;font-size:14px;color:var(--muted);line-height:1.4;margin-top:2px}
+.mrow .st{margin-top:6px}
+.foot{margin:28px 0 8px;font-size:13px;color:var(--muted);text-align:center;line-height:1.6}
+
+.pair{display:inline-flex}
+.pair .amap{border-radius:999px 0 0 999px}
+.pair .cp{border-radius:0 999px 999px 0;border-left:0;padding:4px 11px;font-size:13px;color:var(--muted)}
+.pair .cp.ok{color:var(--c-tn)}
+
+/* Tab bar */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--surface) 94%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.tabbar-in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:6px 8px}
+.tab{position:relative;display:grid;justify-items:center;gap:2px;min-height:54px;padding:6px 0;background:none;border:0;border-radius:14px;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer}
+.tab svg{width:22px;height:22px}
+.tab[aria-selected=true]{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.badge{position:absolute;top:2px;left:calc(50% + 7px);min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:var(--miss-line);color:#2A1A00;font-size:12px;font-weight:700;line-height:19px;text-align:center;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>Shenzhen e Malesia</h1>
+    <p class="dates">20 dicembre – 5 gennaio, da Roma a Roma o Milano</p>
+    <p class="facts"><span><b>17</b> giorni, <b>16</b> notti</span><span id="countdown"></span><span>Fuso <b>+7 h</b> su Roma</span></p>
+    <button class="todo" id="statMiss" type="button"><b id="missCount">0</b>cose da sistemare</button>
+  </div>
+  <div class="scene" id="scene" role="img" aria-label="Il viaggio come un paesaggio: grattacieli di Shenzhen, Kuala Lumpur, giungla di Taman Negara, colline del tè, case di George Town e il mare di Langkawi"><svg id="sceneSvg" aria-hidden="true"></svg></div>
+</header>
+
+<nav class="strip" id="strip" aria-label="Giorni del viaggio"><div class="strip-scroll" id="stripScroll"></div></nav>
+
+<main>
+  <section class="view wrap" id="v-giorni" aria-label="Giorni"></section>
+  <section class="view wrap" id="v-tappe" aria-label="Tappe" hidden></section>
+  <section class="view wrap" id="v-cibo" aria-label="Dove mangiare" hidden></section>
+  <section class="view wrap" id="v-mancanti" aria-label="Da sistemare" hidden></section>
+</main>
+
+<nav class="tabbar" aria-label="Sezioni">
+  <div class="tabbar-in" role="tablist">
+    <button class="tab" role="tab" data-view="giorni" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Giorni</button>
+    <button class="tab" role="tab" data-view="tappe" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></svg>Tappe</button>
+    <button class="tab" role="tab" data-view="cibo" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 21V3c-2.2 0-3.5 2.5-3.5 6s1.3 4 3.5 4"/></svg>Mangiare</button>
+    <button class="tab" role="tab" data-view="mancanti" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3 2.4"/><path d="M12 7.5v5.5M12 16.2v.3"/></svg>Da sistemare<span class="badge" id="tabBadge"></span></button>
+  </div>
+</nav>
+
+<script>
+{
+const ICON = {
+  flight:'<path d="M10 14 3.5 12l1-1.8 7 .6L16 5.5a1.6 1.6 0 0 1 2.6 1.8L15 12l.7 7-1.8 1L11 14.6"/>',
+  transfer:'<rect x="4" y="5" width="16" height="11" rx="2.5"/><path d="M4 11h16M7.5 19v-3M16.5 19v-3"/><circle cx="8" cy="13.5" r=".6"/><circle cx="16" cy="13.5" r=".6"/>',
+  boat:'<path d="M3 16.5l1.8 3h14.4l1.8-3zM12 4v12.5M12 4.5l6 9H12"/>',
+  sleep:'<path d="M3 19v-9M3 15h18v4M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="12" r="1.6"/>',
+  do:'<circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
+  eat:'<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 21V3c-2.2 0-3.5 2.5-3.5 6s1.3 4 3.5 4"/>',
+  option:'<circle cx="12" cy="12" r="8.5" stroke-dasharray="3 2.4"/><path d="M9.8 9.6a2.3 2.3 0 1 1 3.3 2.1c-.7.4-1.1.9-1.1 1.7M12 16.3v.2"/>',
+  party:'<path d="M12 3v3.5M12 17.5V21M3 12h3.5M17.5 12H21M5.8 5.8l2.5 2.5M15.7 15.7l2.5 2.5M5.8 18.2l2.5-2.5M15.7 8.3l2.5-2.5"/>',
+  plan:'<path d="M4 6h16M4 12h10M4 18h7"/>',
+  train:'<rect x="6" y="3.5" width="12" height="13" rx="3"/><path d="M6 10h12M9 20l1.5-3.5M15 20l-1.5-3.5"/><circle cx="9.5" cy="13.5" r=".6"/><circle cx="14.5" cy="13.5" r=".6"/>',
+  doc:'<path d="M7 3.5h7l4 4V19a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 6 19V5a1.5 1.5 0 0 1 1-1.5z"/><path d="M14 3.5V8h4M9 12.5h6M9 16h6"/>',
+  ext:'<path d="M14 5h5v5M19 5l-8 8M18 14v4a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 5 18V7.5A1.5 1.5 0 0 1 6.5 6H10"/>',
+  pin:'<path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 0 0-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.3"/>'
+};
+const svg = (k) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICON[k]+'</svg>';
+const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ST_LABEL = {manca:'Manca', decidere:'Da decidere', verificare:'Da verificare'};
+const pill = (s) => s ? '<span class="st '+s+'">'+ST_LABEL[s]+'</span>' : '';
+
+/* ===== Dati (fonte: Programma di viaggio - Malaysia.docx) ===== */
+const AMAP = ["https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%AE%9D%E5%AE%89%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%87%A4%E5%87%B0%E6%A5%BC%20%E7%BA%A2%E8%8D%94%E8%B7%AF&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E7%82%B9%E9%83%BD%E5%BE%B7%20%E7%9A%87%E5%B2%97%E6%9D%91&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E8%8E%B2%E8%8A%B1%E5%B1%B1%E5%85%AC%E5%9B%AD&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%A6%87%E5%84%BF%E5%A4%A7%E5%8E%A6&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%A4%A7%E5%94%90%E9%9D%93%E6%B1%A4%20%E7%BA%A2%E8%8D%94%E8%A5%BF%E8%B7%AF&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%B2%97%E5%8E%A6%E5%8C%97%E5%9C%B0%E9%93%81%E7%AB%99&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%B9%B3%E5%AE%89%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%B8%82%E6%B0%91%E4%B8%AD%E5%BF%83&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%8D%96%E9%B1%BC%E4%BD%AC%E7%A0%82%E9%94%85%E7%B2%A5%20%E6%A2%85%E6%9D%91%E8%B7%AF&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%85%B4%E5%AE%81%E5%AE%A2%E5%AE%B6%E8%8F%9C%E9%A6%86%20%E6%A2%85%E6%9D%91%E8%B7%AF&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%98%9F%E6%B2%B3COCOPark%20%E7%A6%8F%E7%94%B0&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%BD%93%E4%BB%A3%E8%89%BA%E6%9C%AF%E4%B8%8E%E5%9F%8E%E5%B8%82%E8%A7%84%E5%88%92%E9%A6%86&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E8%B5%9B%E6%A0%BC%E7%94%B5%E5%AD%90%E5%B8%82%E5%9C%BA&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%8F%AD%E9%98%B3%E8%80%81%E4%BA%8C%E7%B2%BF%E6%9D%A1%E6%B1%A4%20%E4%B8%9C%E5%9B%AD%E8%B7%AF&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%8D%8E%E4%BE%A8%E5%9F%8E%E5%88%9B%E6%84%8F%E6%96%87%E5%8C%96%E5%9B%AD&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B5%B7%E4%B8%8A%E4%B8%96%E7%95%8C%E6%96%87%E5%8C%96%E8%89%BA%E6%9C%AF%E4%B8%AD%E5%BF%83&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B5%B7%E4%B8%8A%E4%B8%96%E7%95%8C%20%E6%98%8E%E5%8D%8E%E8%BD%AE&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%96%B0%E8%AE%B0%E5%AE%A2%E5%AE%B6%E5%91%B3%E9%81%93%20%E5%85%AC%E5%9B%AD%E8%B7%AF&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%BD%AE%E9%A6%99%E5%9B%9B%E6%B5%B7%20%E5%8D%97%E5%B1%B1&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B6%A6%E5%9B%AD%E5%9B%9B%E5%AD%A3%E6%A4%B0%E5%AD%90%E9%B8%A1&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%9D%A4%E8%AE%B0%E5%85%84%E5%BC%9F%E7%89%9B%E8%82%89%E5%BA%97&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%8F%B0%E5%B1%B1%E4%BD%AC%E9%BB%84%E9%B3%9D%E9%A5%AD%20%E6%B0%B4%E5%9B%B4&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E7%A6%8F%E7%94%B0%E7%AB%99&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E6%B9%BE%E6%96%87%E5%8C%96%E5%B9%BF%E5%9C%BA&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E4%BA%BA%E6%89%8D%E5%85%AC%E5%9B%AD&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%B0%8F%E7%B1%B3%E6%B1%BD%E8%BD%A6%20%E4%BA%BA%E6%89%8D%E5%85%AC%E5%9B%AD&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E4%B8%87%E8%B1%A1%E5%A4%A9%E5%9C%B0&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E5%8D%8E%E4%B8%BA%E5%85%A8%E7%90%83%E6%97%97%E8%88%B0%E5%BA%97%20%E4%B8%87%E8%B1%A1%E5%A4%A9%E5%9C%B0&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E8%94%9A%E6%9D%A5%E4%B8%AD%E5%BF%83%20%E4%B8%87%E8%B1%A1%E5%A4%A9%E5%9C%B0&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%BD%AE%E6%B1%95%E5%A4%A7%E7%9B%AE%E7%89%9B%E8%82%89&city=0755&view=map&src=natale2026&callnative=1", "https://uri.amap.com/search?keyword=%E6%BD%AE%E5%8F%91%E6%BD%AE%E6%B1%95%E7%89%9B%E8%82%89&city=0755&view=map&src=natale2026&callnative=1"];
+const STOPS = {
+  rome:{name:'Roma', sub:'Partenza da Fiumicino', c:'rome', dates:'20 dic', nights:0},
+  szx:{name:'Shenzhen', sub:'Cina', c:'szx', dates:'21 – 25 dic', nights:4, stay:null,
+       plan:'21 e 22 dic giornata intera, 24 dic mezza giornata', stayNote:'Hotel in zona Futian, check-in alle 14:00', food:[
+    {n:'Fenghuang Lou (凤凰楼)', d:'Yum cha a colazione, 2012 Hongli Rd, apre alle 08:30, attaccata al Lianhuashan Park. In programma il 21.', amap:1},
+    {n:'Diandude (点都德)', d:'Yum cha, sede Huanggang, apre alle 08:00. Alternativa per la colazione del 21.', amap:2},
+    {n:'大唐靓汤', d:'Bib Gourmand, Hongli West Road: zuppe cotte nella noce di cocco e riso glutinoso saltato con salsiccia. Pranzo del 21.', amap:5},
+    {n:'卖鱼佬砂锅粥', d:'Bib Gourmand, zona Meicun (metro L9 uscita C1): congee al granchio in coccio e tofu di Puning fritto, circa ¥60–100. Cena del 21.', amap:9},
+    {n:'兴宁客家菜馆', d:'Hakka, Meicun Road. Piano B per la cena del 21 se c’è coda.', amap:10},
+    {n:'揭阳老二粿条汤', d:'Bib Gourmand, 7 Dongyuan Road (la sede Michelin, non Hongling): noodles di riso Chaoshan, circa ¥40–60. Pranzo del 22.', amap:14},
+    {n:'新记客家味道', d:'Bib Gourmand a Shekou, 25-20 Gongyuan Road: noodles hakka e wonton. Cena del 22.', amap:18},
+    {n:'潮香四海·家传潮汕菜', d:'Imperdibile, Nanshan, cucina Chaoshan. Alternativa per la cena del 22.', amap:19},
+    {n:'润园四季椰子鸡 (Seasons)', d:'Coconut chicken hotpot. Alternativa per la cena del 22 o della Vigilia.', amap:20},
+    {n:'潮汕大目牛肉', d:'Imperdibile, beef hotpot Chaoshan: comoda la sede di Huanggang. Cena della Vigilia.', amap:30},
+    {n:'潮发潮汕牛肉店', d:'Beef hotpot Chaoshan, alternativa per la Vigilia.', amap:31},
+    {n:'坤记兄弟牛肉店', d:'Aperto fino alle 02:00: per la fame tardi al rientro da Hong Kong il 23.', amap:21},
+    {n:'台山佬黄鳝饭', d:'Shuiwei 6th Street, alternativa per il dopo Hong Kong del 23.', amap:22}
+  ]},
+  hkg:{name:'Hong Kong', sub:'In giornata da Shenzhen', c:'hkg', dates:'23 – 24 dic', nights:0, stay:false,
+       plan:'23 dic giornata intera (HK Island, Peak, Central, Happy Valley), 24 dic mezza giornata a Kowloon', food:[]},
+  kul:{name:'Kuala Lumpur', sub:'Malesia', c:'kul', dates:'25 – 27 dic', nights:2,
+       stay:{name:'Kuala Lumpur International Hotel', links:[{label:'Maps', href:'https://maps.app.goo.gl/jtmKj9fdN1QH4SCu7', icon:'pin'}, {label:'File su Drive', href:'https://drive.google.com/file/d/1Zom95J7pDa_Ow5Phtw_Y439ItGBV30ur/view?usp=drive_link', icon:'doc'}]},
+       plan:'25 dic mezza giornata, 26 dic giornata intera, partenza 27 dic', food:[],
+       tips:['Aeroporto–hotel: Grab XL (6 posti), circa RM75–120 o più a macchina. Verificare lo spazio per cinque persone e bagagli.',
+             'Metro e bus: una Touch ’n Go fisica a testa (RM10) allo sportello Rapid KL, caricata con RM20. Si passa in entrata e in uscita e la corsa (metro RM1–6) viene scalata in automatico. Ricaricare al bisogno, nessun abbonamento, Apple Wallet non supportato.',
+             'Grab in città: versione 6 posti, circa RM15–30 a macchina, da dividere in cinque.']},
+  tn:{name:'Taman Negara', sub:'Parco nazionale, Pahang', c:'tn', dates:'27 – 28 dic', nights:1,
+       stay:{name:'Mutiara Taman Negara', note:'Check-in 27 dic, check-out 28 dic', links:[{label:'Booking', href:'https://www.booking.com/Share-XoSEBJ', icon:'ext'}, {label:'File su Drive', href:'https://drive.google.com/file/d/1aQen4NWKxUREAEfdx98nwlMPTBmzCzdV/view?usp=drive_link', icon:'doc'}]},
+       plan:'27 e 28 dic mezza giornata, partenza 28 dic', food:[]},
+  cam:{name:'Cameron Highlands', sub:'Mossy Forest', c:'cam', dates:'28 – 29 dic', nights:1, stay:null, plan:'1 giornata intera + 1 mezza giornata', food:[],
+       extra:[{text:'Piano giornate a Cameron Highlands', status:'verificare', note:'Il doc prevede 1 giornata intera + 1 mezza, ma la tappa è di 1 sola notte (28 sera – 29 mattina).'}]},
+  gt:{name:'George Town', sub:'Penang', c:'gt', dates:'29 – 31 dic', nights:2, stay:null, plan:'1 giornata intera + 1 mezza giornata', food:[
+    {n:'Ten Sek', d:'Cinese tradizionale, tanti piatti da condividere. Una delle esperienze più rappresentative di Penang. Arrivare prima dell’apertura per evitare la coda.', maps:'https://maps.app.goo.gl/Nw3L4m3yrXv3TdZ76'},
+    {n:'Siam Road', d:'Char kway teow stile pad thai con gamberi. Consigliato Michelin, possibili code.', maps:'https://maps.app.goo.gl/Pr2vp5gCSRZWQ64X8'},
+    {n:'Ivy’s Nyonya Cuisine', d:'Cucina nyonya super tipica di George Town: curry e molto altro.', maps:'https://maps.app.goo.gl/ha3JqtbjxT22A95j6'},
+    {n:'Communal Table by Gēn 根', d:'Cucina malese contemporanea e ricercata. Circa 30 € a persona.', maps:'https://maps.app.goo.gl/rxtjrUie4z4BSxkL9'},
+    {n:'My Own Cafe', d:'Assam laksa, la zuppa di noodles tipica di George Town, e involtini primavera clamorosi.', maps:'https://maps.app.goo.gl/PGqJ2Cmk7M8pQfjHA'}
+  ]},
+  lgk:{name:'Langkawi', sub:'Pantai Cenang', c:'lgk', dates:'31 dic – 3 gen', nights:3,
+       stay:{name:'Tropicana Cenang Assana by Rimba Hill', links:[{label:'Maps', href:'https://maps.app.goo.gl/fDpon8674b9VccYB6', icon:'pin'}, {label:'Booking', href:'https://www.booking.com/hotel/my/tropicana-cenang-assana-by-rimba-hill.it.html', icon:'ext'}]},
+       food:[
+    {n:'Sufra Restaurant', d:'Ristorante indiano', maps:'https://maps.app.goo.gl/jf5Uk9BtWX4TPhj76'},
+    {n:'Bella Restaurant', d:'Colazione malese', maps:'https://maps.app.goo.gl/oTvHB7s25Uv6FuU27'},
+    {n:'Warung Upih Ikan Bakar Seafood Beach Restaurant', d:'Ristorante sulla spiaggia, pesce fritto', maps:'https://maps.app.goo.gl/JzJRJwk6nrSYV8rr5'},
+    {n:'Mr Smashed Diner', d:'Smash burger e pollo fritto', maps:'https://maps.app.goo.gl/4QVfAvgWgRY92EGM9'},
+    {n:'Hidden Langkawi', d:'Cucina variegata', maps:'https://maps.app.goo.gl/91KYFy8BHs3ci3gx5'}
+  ]},
+  kul2:{name:'Kuala Lumpur', sub:'Ritorno', c:'kul', dates:'3 – 5 gen', nights:2, stay:null, foodRef:'kul'}
+};
+const ROUTE = ['szx','hkg','kul','tn','cam','gt','lgk','kul2'];
+
+const LEGS = {
+  'rm-sz':{to:'szx', mode:'flight', text:'Volo HU438 Roma Fiumicino → Shenzhen', when:'Partenza 20 dic alle 10:20 (ora di Roma), arrivo 21 dic alle 05:00 (ora di Shenzhen)', note:'Hainan Airlines, volo diretto.'},
+  'sz-hk':{to:'hkg', mode:'train', text:'Treno Futian → Kowloon West, e ritorno', when:'23 dic, andata e ritorno in giornata', status:'manca', note:'Orari e biglietti non ancora nel documento.'},
+  'sz-kl':{to:'kul', mode:'flight', text:'Volo AirAsia AK127 per Kuala Lumpur', when:'25 dic, partenza 11:25, arrivo 15:35', note:'Bagagli: 3 in stiva inclusi, 2 solo bagaglio a mano.'},
+  'kl-tn':{to:'tn', mode:'transfer', text:'Transfer per Taman Negara', when:'27 dic, partenza mattina, circa 5 ore fino al villaggio', status:'manca', note:'Mezzo e orari da definire.'},
+  'tn-cam':{to:'cam', mode:'transfer', text:'Taman Negara → Cameron Highlands', when:'28 dic, ripartenza pomeriggio', status:'manca', note:'Mezzo e orari da definire.'},
+  'cam-gt':{to:'gt', mode:'transfer', text:'Cameron Highlands → George Town', when:'29 dic, ripartenza mattina, arrivo in serata', status:'manca', note:'Mezzo e orari da definire.'},
+  'gt-lgk':{to:'lgk', mode:'boat', text:'George Town → Langkawi', when:'31 dic', status:'manca', note:'Mezzo e orario da scegliere.'},
+  'lgk-kl':{to:'kul2', mode:'flight', text:'Langkawi → Kuala Lumpur', when:'3 gen, ripartenza mattina', status:'manca', note:'Mezzo e orari da definire.'},
+  'kl-rm':{to:'rome', mode:'flight', text:'Volo Kuala Lumpur → Roma o Milano', when:'5 gen', status:'manca', note:'Destinazione, voli e orari non ancora nel documento.'}
+};
+const PROG = (text, note) => ({type:'do', text: text||'Programma della giornata', status:'manca', note: note||'Cosa fare: da definire.'});
+
+const DAYS = [
+  {d:'2026-12-20', stop:'rome', sleep:'plane', title:'Partenza da Roma', items:[{leg:'rm-sz'}]},
+  {d:'2026-12-21', stop:'szx', sleep:'szx', title:'Arrivo a Shenzhen', sub:'Mattina soft post-volo, architettura civica e skyline (Futian)', intro:'Lunedì i musei sono chiusi: mattina tranquilla in attesa del check-in alle 14:00.', items:[
+    {t:['05:00','07:00'], type:'flight', text:'Arrivo a Bao’an con il volo HU438', note:'Trasferimento a Futian con la metro espressa Linea 11 o con 2 Didi.', links:[['Aeroporto',0]]},
+    {t:['07:00','08:15'], type:'sleep', text:'Bagagli in hotel a Futian', note:'Deposito e rinfrescata veloce.'},
+    {t:['08:30','10:00'], type:'eat', text:'Colazione yum cha con calma', note:'Fenghuang Lou (凤凰楼), 2012 Hongli Rd, apre alle 08:30, attaccata al parco. Oppure Diandude (点都德), sede Huanggang, apre alle 08:00.', links:[['Fenghuang Lou',1],['Diandude',2]]},
+    {t:['10:00','11:30'], type:'do', text:'Lianhuashan Park', note:'Passeggiata per prendere aria e vedere l’asse urbanistico di Futian dall’alto. La piazzola dei droni Meituan è nell’area campeggio del parco.', links:[3]},
+    {t:['11:45','12:15'], type:'do', text:'Shenzhen Women & Children’s Center (MVRDV)', status:'verificare', note:'A pochi minuti dal parco: verificate l’apertura interna di lunedì.', links:[4]},
+    {t:['12:30','13:45'], type:'eat', text:'Pranzo leggero da 大唐靓汤', note:'Bib Gourmand, Hongli West Road: zuppe cotte nella noce di cocco e riso glutinoso saltato con salsiccia.', links:[5]},
+    {t:['14:00','16:30'], type:'sleep', text:'Check-in in hotel, doccia e riposo'},
+    {t:['16:45','17:15'], type:'do', text:'Gangxia North, “Eye of Shenzhen”', note:'La stazione della metro con il lucernario a spirale di Fermat.', links:[6]},
+    {t:['17:30','19:15'], type:'do', text:'Ping An Finance Centre al tramonto', note:'Free Sky Observation Deck al 116° piano, poi passeggiata nel CBD fino al Civic Center. Stasera solo illuminazione standard: lo show animato c’è ven, sab e festivi.', links:[['Ping An',7],['Civic Center',8]]},
+    {t:['19:45','21:30'], type:'eat', text:'Cena da 卖鱼佬砂锅粥', note:'Bib Gourmand in zona Meicun (metro L9 uscita C1): congee al granchio in coccio e tofu di Puning fritto, circa ¥60–100. Piano B se c’è coda: 兴宁客家菜馆, Hakka, sulla stessa Meicun Road.', links:[['卖鱼佬',9],['兴宁客家',10]]},
+    {t:['21:30','23:00'], type:'party', text:'Drink al Coco Park', links:[11]}
+  ]},
+  {d:'2026-12-22', stop:'szx', sleep:'szx', title:'Shenzhen', sub:'MOCAPE, Huaqiangbei, OCT-LOFT e Shekou', intro:'Percorso lineare da est a ovest, zero giri a vuoto.', items:[
+    {t:['09:00','09:45'], type:'eat', text:'Colazione veloce a Futian'},
+    {t:['10:00','11:30'], type:'do', text:'MOCAPE', note:'Museo di arte contemporanea e urbanistica nel CBD di Futian, architettura parametrica di Coop Himmelb(l)au. Aperto 10:00–18:00: prenotazione gratuita e passaporto fisico.', links:[12]},
+    {t:['11:45','13:30'], type:'do', text:'Huaqiangbei, SEG Electronics Market', note:'A 2 fermate dal MOCAPE: giro mirato tra padiglioni di hardware, droni e gadget.', links:[13]},
+    {t:['13:30','14:30'], type:'eat', text:'Pranzo da 揭阳老二粿条汤', note:'Bib Gourmand subito a sud di Huaqiangbei, 7 Dongyuan Road (la sede Michelin, non Hongling): noodles di riso Chaoshan in brodo o saltati, circa ¥40–60.', links:[14]},
+    {t:['15:00','16:45'], type:'do', text:'OCT-LOFT', note:'Nanshan, Linea 1 diretta: ex distretto industriale tra gallerie, librerie di design, murales e caffè.', links:[15]},
+    {t:['17:15','19:00'], type:'do', text:'Design Society, Sea World Culture and Arts Center', note:'Shekou, architettura di Fumihiko Maki: controllate le mostre in corso, le gallerie chiudono alle 19:00. Tramonto dalle terrazze sul mare, poi due passi fino alla nave illuminata Minghua.', links:[['Design Society',16],['Nave Minghua',17]]},
+    {t:['19:30','21:30'], type:'eat', text:'Cena a Shekou da 新记客家味道', note:'Bib Gourmand, 25-20 Gongyuan Road: noodles hakka e wonton. In alternativa 潮香四海 (Nanshan) oppure 润园四季椰子鸡 (Seasons), coconut chicken hotpot.', links:[['新记客家',18],['潮香四海',19],['润园四季',20]]}
+  ]},
+  {d:'2026-12-23', stop:'hkg', sleep:'szx', title:'Hong Kong in giornata', items:[{leg:'sz-hk'}, {type:'do', text:'Hong Kong Island, Peak e Central'}, {type:'party', text:'Happy Wednesday a Happy Valley', status:'verificare', note:'Le corse del mercoledì sera all’ippodromo: controlla sul calendario dell’HKJC che il 23 dicembre ci sia la serata.'},
+    {type:'train', text:'Ultimo treno West Kowloon → Futian verso le 23:00', status:'verificare', note:'Controllate l’orario esatto per non perderlo con l’Happy Wednesday.'},
+    {type:'eat', text:'Se avete fame tardi a Shenzhen', note:'坤记兄弟牛肉店, aperto fino alle 02:00, oppure 台山佬黄鳝饭 a Shuiwei 6th Street.', links:[['坤记兄弟',21],['台山佬',22]]}]},
+  {d:'2026-12-24', stop:'hkg', sleep:'szx', title:'Kowloon, poi Shenzhen', tags:['Vigilia'], sub:'Nuova architettura, droni, EV flagship e Vigilia (Nanshan)', items:[
+    {t:['Mattina'], type:'do', text:'Mezza giornata a Kowloon'},
+    {t:['13:30','14:00'], type:'train', text:'Treno West Kowloon → Futian', status:'manca', note:'Rientro alla stazione Futian entro le 13:30–14:00. Il treno di andata la mattina non è ancora nel documento.', links:[['Futian Station',23]]},
+    {t:['14:00','14:45'], type:'transfer', text:'Dalla stazione Futian dritti a Nanshan', note:'Senza ripassare dall’hotel: Metro Linea 13 fino a Talent Park, uscita B1.'},
+    {t:['15:00','17:00'], type:'do', text:'Shenzhen Bay Culture Square (MAD Architects)', note:'Aperto 10:00–18:00, ultimo ingresso alle 17:00, a pagamento. Il tetto-giardino è accessibile liberamente.', links:[24]},
+    {t:['17:15','18:30'], type:'do', text:'Talent Park al tramonto, droni Meituan e Xiaomi EV Flagship', note:'Tramonto verso le 17:45. Lo showroom Xiaomi (SU7, SU7 Ultra, YU7) è a 520 m dall’uscita B1 della metro.', links:[['Talent Park',25],['Xiaomi',26]]},
+    {t:['18:45','20:00'], type:'do', text:'MixC World', note:'Huawei Global Flagship Store, NIO House e passeggiata tra gli allestimenti natalizi.', links:[['MixC World',27],['Huawei',28],['NIO House',29]]},
+    {t:['20:15','22:15'], type:'eat', text:'Cena della Vigilia: beef hotpot Chaoshan', note:'潮汕大目牛肉 (comoda la sede di Huanggang rientrando verso Futian) o 潮发潮汕牛肉店, oppure 润园四季椰子鸡 se non l’avete fatto il 22. Alla Vigilia è tutto pieno: prendete il numerino dall’app con anticipo.', links:[['大目牛肉',30],['潮发',31],['润园四季',20]]},
+    {t:['22:30'], type:'sleep', text:'Rientro in hotel e chiusura valigie'}
+  ]},
+  {d:'2026-12-25', stop:'kul', sleep:'kul', title:'Volo per Kuala Lumpur', tags:['Natale'], items:[
+    {t:['07:30','08:00'], type:'transfer', text:'Check-out e trasferimento all’aeroporto di Bao’an', links:[['Aeroporto',0]]},
+    {leg:'sz-kl', t:['11:25','15:35']},
+    {type:'transfer', text:'Aeroporto → hotel con Grab XL (6 posti)', note:'Circa RM75–120 o più a macchina. Verificare lo spazio per cinque persone e bagagli.'},
+    PROG('Mezza giornata a Kuala Lumpur', 'Arrivo alle 15:35. Cosa fare: da definire.')
+  ]},
+  {d:'2026-12-26', stop:'kul', sleep:'kul', title:'Kuala Lumpur', tags:['S. Stefano'], items:[PROG('Giornata intera a Kuala Lumpur')]},
+  {d:'2026-12-27', stop:'tn', sleep:'tn', title:'Verso la giungla di Taman Negara', items:[{leg:'kl-tn'}, PROG('Mezza giornata a Taman Negara'), {type:'boat', text:'Navigazione sul fiume Tembeling', status:'decidere', note:'Nel documento è “in forse”.'}]},
+  {d:'2026-12-28', stop:'tn', sleep:'cam', title:'Taman Negara, poi Cameron Highlands', items:[PROG('Mezza giornata a Taman Negara', 'Check-out dal Mutiara. Cosa fare: da definire.'), {leg:'tn-cam'}]},
+  {d:'2026-12-29', stop:'cam', sleep:'gt', title:'Mossy Forest e arrivo a Penang', items:[{type:'do', text:'Mossy Forest', status:'decidere', note:'Quando andarci: il 28 sera o il 29 mattina, prima di ripartire?'}, {leg:'cam-gt'}, {type:'eat', text:'Cena a George Town', note:'5 posti salvati.', go:'cibo', stop:'gt'}]},
+  {d:'2026-12-30', stop:'gt', sleep:'gt', title:'George Town', items:[PROG('Giornata intera a George Town'), {type:'eat', text:'Dove mangiare', note:'5 posti salvati.', go:'cibo', stop:'gt'}]},
+  {d:'2026-12-31', stop:'gt', sleep:'lgk', title:'Penang, poi Langkawi', tags:['San Silvestro'], items:[PROG('Mezza giornata a George Town'), {leg:'gt-lgk'}, {type:'party', stop:'lgk', text:'Notte di Capodanno a Langkawi', status:'manca', note:'Dove festeggiare: da definire.'}]},
+  {d:'2027-01-01', stop:'lgk', sleep:'lgk', title:'Langkawi', tags:['Capodanno'], items:[PROG('Giornata a Langkawi'), {type:'eat', text:'Dove mangiare', note:'5 posti salvati.', go:'cibo', stop:'lgk'}]},
+  {d:'2027-01-02', stop:'lgk', sleep:'lgk', title:'Langkawi', items:[PROG('Giornata a Langkawi'), {type:'eat', text:'Dove mangiare', note:'5 posti salvati.', go:'cibo', stop:'lgk'}]},
+  {d:'2027-01-03', stop:'lgk', sleep:'kul2', title:'Rientro a Kuala Lumpur', items:[{leg:'lgk-kl'}]},
+  {d:'2027-01-04', stop:'kul2', sleep:'kul2', title:'Ultimo giorno a Kuala Lumpur', items:[PROG('Giornata a Kuala Lumpur')]},
+  {d:'2027-01-05', stop:'kul2', sleep:null, title:'Volo di ritorno', items:[{leg:'kl-rm'}]}
+];
+
+const DOC_URL = 'https://docs.google.com/document/d/1Ulpk-UXLIDt4eeCaergt1WrWdsOo_rnb/edit';
+
+/* ===== Utility date ===== */
+const DOW = ['dom','lun','mar','mer','gio','ven','sab'];
+const MON = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+const parse = (s) => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const pad = (n) => String(n).padStart(2,'0');
+const now = new Date();
+const todayKey = now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+DAYS.forEach((day,i) => { day.i = i; day.dt = parse(day.d); day.id = 'g-'+day.d; day.today = day.d === todayKey; });
+const cityVar = (id) => 'var(--c-'+STOPS[id].c+')';
+const shortDate = (day) => day.dt.getDate()+' '+MON[day.dt.getMonth()];
+const nightCount = {};
+DAYS.forEach(day => { if(day.sleep){ nightCount[day.sleep] = (nightCount[day.sleep]||0)+1; day.night = nightCount[day.sleep]; } });
+
+/* ===== Elenco mancanti ===== */
+function buildMissing(){
+  const groups = {}; ROUTE.forEach(id => groups[id] = []);
+  ROUTE.forEach(id => {
+    const s = STOPS[id];
+    if(s.nights > 0 && s.stay === null) groups[id].push({text:'Alloggio', status:'manca', note:s.dates, go:'tappe'});
+    if(!s.foodRef){
+      if(!s.food.length) groups[id].push({text:'Ristoranti', status:'manca', note:'Nessun posto salvato.', go:'cibo', stop:id});
+      s.food.filter(f => f.status).forEach(f => groups[id].push({text:'Ristorante: '+f.n, status:f.status, note:f.note, go:'cibo', stop:id}));
+    }
+    (s.extra||[]).forEach(e => groups[id].push(Object.assign({go:'tappe'}, e)));
+  });
+  const usedLegs = new Set();
+  DAYS.forEach(day => day.items.forEach(it => {
+    if(it.leg){ usedLegs.add(it.leg); const l = LEGS[it.leg]; if(l.status){ const g = l.to === 'rome' ? 'kul2' : l.to; groups[g].push({text:l.text, status:l.status, note:l.note, day}); } }
+    else if(it.status) groups[it.stop||day.stop].push({text:it.text, status:it.status, note:it.note, day});
+  }));
+  Object.entries(LEGS).forEach(([k,l]) => { if(!usedLegs.has(k) && l.status) groups[l.to].push({text:l.text, status:l.status, note:l.note, go:'tappe'}); });
+  return groups;
+}
+const MISSING = buildMissing();
+const ALL_MISSING = Object.values(MISSING).flat();
+const dayMissing = (day) => day.items.some(it => it.leg ? LEGS[it.leg].status : it.status) || (day.sleep && STOPS[day.sleep] && STOPS[day.sleep].stay === null);
+
+/* ===== Hero ===== */
+document.getElementById('missCount').textContent = ALL_MISSING.length;
+document.getElementById('tabBadge').textContent = ALL_MISSING.length;
+const T0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+const START = DAYS[0].dt, END = DAYS[DAYS.length-1].dt;
+const TODAY = DAYS.find(x => x.today);
+{
+  const diff = Math.round((START - T0)/86400000);
+  const el = document.getElementById('countdown');
+  if(diff > 1) el.innerHTML = 'Si parte tra <b>'+diff+' giorni</b>';
+  else if(diff === 1) el.innerHTML = 'Si parte <b>domani</b>';
+  else if(T0 <= END) el.innerHTML = '<b>Giorno '+(TODAY ? TODAY.i+1 : '')+' di '+DAYS.length+'</b>';
+  else el.innerHTML = '<b>Viaggio concluso</b>';
+}
+
+/* ===== Panorama: le notti in scala, un paesaggio per tappa ===== */
+const KIND = {szx:'city', kul:'twin', tn:'jungle', cam:'tea', gt:'heritage', lgk:'beach', kul2:'twin'};
+const SEGS = ROUTE.filter(id => STOPS[id].nights).map(id => ({id, n:STOPS[id].nights, kind:KIND[id]}));
+const TOTAL = SEGS.reduce((a,s) => a+s.n, 0);
+const sceneBox = document.getElementById('scene');
+const sceneSvg = document.getElementById('sceneSvg');
+const R = (x,y,w,h,f) => '<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+Math.max(0,w).toFixed(1)+'" height="'+Math.max(0,h).toFixed(1)+'" fill="var(--'+f+')"/>';
+function drawScene(){
+  const W = sceneBox.clientWidth, H = sceneBox.clientHeight; if(!W || !H) return;
+  let seed = 11; const r = () => (seed = seed*16807 % 2147483647) / 2147483647;
+  const BAR = 7, base = H - BAR - 2, y0 = Math.round(H*0.72);
+  let out = '<defs><linearGradient id="seaG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sea)"/><stop offset="1" stop-color="var(--sea-d)"/></linearGradient></defs>';
+  for(let i=0;i<Math.round(W/9);i++) out += '<circle cx="'+(r()*W).toFixed(1)+'" cy="'+(r()*H*0.45).toFixed(1)+'" r="'+(0.6+r()*0.9).toFixed(1)+'" fill="var(--star)"/>';
+  const p1 = r()*6, p2 = r()*6;
+  let hill = 'M0 '+base;
+  for(let x=0;x<=W+8;x+=8){ const y = y0 + 4 - H*0.2*(0.55+0.28*Math.sin(x/61+p1)+0.17*Math.sin(x/23+p2)); hill += ' L'+x+' '+y.toFixed(1); }
+  out += '<path d="'+hill+' L'+W+' '+base+' Z" fill="var(--far)"/>';
+  out += R(0, y0, W, base-y0, 'land');
+  let x = 0;
+  SEGS.forEach((s,k) => {
+    const x0 = x, x1 = x + W*s.n/TOTAL, w = x1-x0, cx = (x0+x1)/2; x = x1;
+    let g = '<clipPath id="c'+k+'"><rect x="'+x0.toFixed(1)+'" y="0" width="'+w.toFixed(1)+'" height="'+base+'"/></clipPath><g clip-path="url(#c'+k+')">';
+    if(s.kind === 'city' || s.kind === 'twin'){
+      if(s.kind === 'twin'){
+        const th = Math.min(H*0.6, y0-8), tw = Math.max(6, Math.min(10, w*0.13));
+        [cx-tw-3, cx+3].forEach(tx => {
+          g += '<path d="M'+tx+' '+y0+' V'+(y0-th*0.82)+' L'+(tx+tw*0.2)+' '+(y0-th*0.9)+' L'+(tx+tw/2)+' '+(y0-th*0.94)+' L'+(tx+tw*0.8)+' '+(y0-th*0.9)+' L'+(tx+tw)+' '+(y0-th*0.82)+' V'+y0+' Z" fill="var(--tower)"/>';
+          g += R(tx, y0-th*0.82, tw*0.35, th*0.82, 'tower-l');
+          g += '<path d="M'+(tx+tw/2)+' '+(y0-th*0.94)+' V'+(y0-th)+'" stroke="var(--tower)" stroke-width="1.5"/>';
+        });
+        g += R(cx-3, y0-th*0.5, 6, 3, 'tower');
+      }
+      let bx = x0 + 1;
+      while(bx < x1 - 3){
+        let bw = 6 + r()*9; if(bx + bw > x1 - 1) bw = x1 - 1 - bx;
+        const near = s.kind === 'twin' && Math.abs(bx + bw/2 - cx) < 16;
+        const bh = (near ? 8 + r()*14 : 14 + r()*H*(s.kind==='city' ? 0.36 : 0.24));
+        g += R(bx, y0-bh, bw, bh, 'tower') + R(bx, y0-bh, bw*0.33, bh, 'tower-l');
+        for(let wy = y0-bh+5; wy < y0-5; wy += 6) if(r() < 0.3) g += R(bx+bw*0.55, wy, 1.8, 1.8, 'win');
+        bx += bw + 1.5;
+      }
+    } else if(s.kind === 'jungle'){
+      for(let i=0;i<Math.max(5,w/6);i++){ const tx = x0 + r()*w, rr = 7 + r()*9; g += '<circle cx="'+tx.toFixed(1)+'" cy="'+(y0-4-r()*14).toFixed(1)+'" r="'+rr.toFixed(1)+'" fill="var(--'+(i%2?'land-d':'land-l')+')"/>'; }
+      const ex = x0 + w*0.62; g += '<path d="M'+ex+' '+y0+' V'+(y0-H*0.34)+'" stroke="var(--land-d)" stroke-width="2"/><ellipse cx="'+ex+'" cy="'+(y0-H*0.36)+'" rx="12" ry="7" fill="var(--land-d)"/>';
+    } else if(s.kind === 'tea'){
+      const top = y0 - H*0.34, hp = 'M'+(x0-6)+' '+y0+' Q'+cx+' '+(top-H*0.12)+' '+(x1+6)+' '+y0+' Z';
+      g += '<clipPath id="t'+k+'"><path d="'+hp+'"/></clipPath><path d="'+hp+'" fill="var(--tea)"/><g clip-path="url(#t'+k+')">';
+      for(let ty = top; ty < y0; ty += 6) g += '<path d="M'+(x0-6)+' '+(ty+6)+' Q'+cx+' '+(ty-3)+' '+(x1+6)+' '+(ty+6)+'" fill="none" stroke="var(--tea-l)" stroke-width="1.6"/>';
+      g += R(x0-6, y0 - (y0-top)*0.55, w*0.4, (y0-top), 'land-d') + '</g>';
+    } else if(s.kind === 'heritage'){
+      const cols = ['h1','h2','h3','h4']; let hx = x0 + 1, i = 0;
+      while(hx < x1 - 6){
+        let hw = 12 + r()*4; if(hx + hw > x1 - 1) hw = x1 - 1 - hx;
+        const hh = 26 + r()*12, c = cols[i++ % 4];
+        g += '<path d="M'+(hx-1)+' '+(y0-hh)+' L'+(hx+hw/2)+' '+(y0-hh-7)+' L'+(hx+hw+1)+' '+(y0-hh)+' Z" fill="var(--roof)"/>';
+        g += R(hx, y0-hh, hw, hh, c) + R(hx, y0-7, hw, 7, 'land-d');
+        const aw = hw*0.42, ax = hx + (hw-aw)/2;
+        g += R(ax, y0-hh+9, aw, 8, 'arch') + '<circle cx="'+(ax+aw/2)+'" cy="'+(y0-hh+9)+'" r="'+(aw/2)+'" fill="var(--arch)"/>';
+        hx += hw + 1;
+      }
+    } else if(s.kind === 'beach'){
+      g += '<circle cx="'+(x0+w*0.42)+'" cy="'+(y0-H*0.4)+'" r="'+Math.min(15,H*0.08)+'" fill="var(--sun)"/>';
+      g += '<path d="M'+(x0-4)+' '+(y0-3)+' Q'+(x0+w*0.25)+' '+(y0-H*0.2)+' '+(x0+w*0.55)+' '+(y0-3)+' Z" fill="var(--far)"/>';
+      g += R(x0, y0-3, w, base-y0+3, 'sea').replace('fill="var(--sea)"','fill="url(#seaG)"');
+      for(let i=0;i<5;i++){ const ly = y0 + 4 + i*((base-y0-6)/5), lw = 10 + r()*16; g += '<path d="M'+(x0+w*0.42-lw/2)+' '+ly.toFixed(1)+' h'+lw.toFixed(1)+'" stroke="var(--sun)" stroke-width="1.5" opacity=".7"/>'; }
+      g += '<path d="M'+(x1-w*0.42)+' '+base+' Q'+(x1-w*0.1)+' '+(y0+(base-y0)*0.2)+' '+(x1+6)+' '+(y0+(base-y0)*0.1)+' V'+base+' Z" fill="var(--sand)"/>';
+      const px = x1 - w*0.2, tx = px - 7, ty = y0 - H*0.3;
+      g += '<path d="M'+px+' '+(y0+(base-y0)*0.6)+' Q'+(px+3)+' '+(y0-H*0.12)+' '+tx+' '+ty+'" fill="none" stroke="var(--tower-l)" stroke-width="3" stroke-linecap="round"/>';
+      [-160,-125,-90,-55,-20].forEach(a => { const rad = a*Math.PI/180, L = 16; g += '<path d="M'+tx+' '+ty+' Q'+(tx+Math.cos(rad)*L*0.6)+' '+(ty+Math.sin(rad)*L*0.6-5)+' '+(tx+Math.cos(rad)*L)+' '+(ty+Math.sin(rad)*L+5)+'" fill="none" stroke="var(--land-d)" stroke-width="3.5" stroke-linecap="round"/>'; });
+    }
+    g += '</g>';
+    out += g;
+    out += '<rect x="'+(x0+(k?1:0)).toFixed(1)+'" y="'+(H-BAR)+'" width="'+(w-(k?1:0)-1).toFixed(1)+'" height="'+BAR+'" rx="2" fill="'+cityVar(s.id)+'"/>';
+  });
+  const ry = y0 + (base-y0)*0.5;
+  out += '<path d="M6 '+ry+' H'+(W-6)+'" stroke="var(--route)" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>';
+  x = 0; SEGS.forEach(s => { out += '<circle cx="'+Math.max(6,x+6).toFixed(1)+'" cy="'+ry+'" r="4.5" fill="'+cityVar(s.id)+'" stroke="var(--route)" stroke-width="2"/>'; x += W*s.n/TOTAL; });
+  if(T0 >= START && T0 <= END){
+    const tx = Math.min(W-8, Math.max(8, ((T0-START)/86400000 + 0.5) * W / DAYS.length));
+    out += '<path d="M'+tx+' '+(H-BAR-3)+' l-6 -9 h12 Z" fill="var(--accent)"/>';
+  }
+  sceneSvg.setAttribute('viewBox','0 0 '+W+' '+H);
+  sceneSvg.innerHTML = out;
+}
+const sceneRO = new ResizeObserver(drawScene); sceneRO.observe(sceneBox);
+
+/* ===== Striscia date ===== */
+{
+  let lastMon = -1, html = '';
+  DAYS.forEach(day => {
+    const m = day.dt.getMonth();
+    if(m !== lastMon){ html += '<span class="mon" aria-hidden="true">'+(m === 11 ? 'Dic' : 'Gen')+'</span>'; lastMon = m; }
+    html += '<button class="pill'+(dayMissing(day)?' miss':'')+(day.today?' today':'')+'" type="button" data-day="'+day.id+'" style="--city:'+cityVar(day.stop)+'" aria-label="'+DOW[day.dt.getDay()]+' '+shortDate(day)+', '+esc(day.title)+'">'+
+      '<span class="dw">'+DOW[day.dt.getDay()]+'</span><span class="dn">'+day.dt.getDate()+'</span><span class="dot"></span></button>';
+  });
+  document.getElementById('stripScroll').innerHTML = html;
+}
+
+/* ===== Vista Giorni ===== */
+const lead = (it, icon) => it.t ? '<span class="tm"><b>'+esc(it.t[0])+'</b>'+(it.t[1] ? '<span>'+esc(it.t[1])+'</span>' : '')+'</span>' : '<span class="ic">'+svg(icon)+'</span>';
+/* Amap: su telefono il bottone apre l'app (AMap Global / 高德地图), "Web" apre il sito; sul computer sito + "Copia" del nome cinese */
+const UA = navigator.userAgent || '';
+const IS_IOS = /iPhone|iPad|iPod/.test(UA) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const IS_ANDROID = /Android/.test(UA);
+const amapName = (i) => { try { return new URL(AMAP[i]).searchParams.get('keyword') || ''; } catch(e){ return ''; } };
+const amapApp = (i) => {
+  const n = amapName(i); if(!n) return '';
+  const k = encodeURIComponent(n.includes('深圳') ? n : '深圳 '+n);
+  if(IS_IOS) return 'iosamap://poi?sourceApplication=natale2026&name='+k+'&dev=0';
+  if(IS_ANDROID) return 'intent://poi?sourceApplication=natale2026&keywords='+k+'&dev=0#Intent;scheme=androidamap;S.browser_fallback_url='+encodeURIComponent(AMAP[i])+';end';
+  return '';
+};
+const amapLinks = (links) => links && links.length ? links.map(x => {
+  const [label, i] = Array.isArray(x) ? x : ['Amap', x];
+  const app = amapApp(i), name = amapName(i);
+  if(app) return '<span class="pair"><a class="lnk amap" href="'+esc(app)+'">'+svg('pin')+esc(label)+'</a><a class="lnk cp" href="'+esc(AMAP[i])+'" target="_blank" rel="noopener" aria-label="'+esc(label)+' sul sito Amap">Web</a></span>';
+  return '<span class="pair"><a class="lnk amap" href="'+esc(AMAP[i])+'" target="_blank" rel="noopener">'+svg('pin')+esc(label)+'</a>'+
+    (name ? '<button class="lnk cp" type="button" data-copy="'+esc(name)+'" aria-label="Copia '+esc(name)+'">Copia</button>' : '')+'</span>';
+}).join('') : '';
+function itemHTML(it){
+  if(it.leg){
+    const l = LEGS[it.leg];
+    return '<li class="it">'+lead(it, l.mode)+'<div class="it-body"><div class="it-text">'+esc(l.text)+'</div><div class="it-when">'+esc(l.when)+'</div>'+
+      (l.status || l.link ? '<div class="row">'+pill(l.status)+(l.link ? '<a class="lnk" href="'+esc(l.link.href)+'" target="_blank" rel="noopener">'+esc(l.link.label)+svg('ext')+'</a>' : '')+'</div>' : '')+
+      (l.note ? '<div class="it-note">'+esc(l.note)+'</div>' : '')+'</div></li>';
+  }
+  const btn = it.go ? '<button class="lnk" type="button" data-go="'+it.go+'"'+(it.stop?' data-stop="'+it.stop+'"':'')+'>'+(it.go==='cibo'?'Vedi i posti':'Vedi tappe')+'</button>' : '';
+  const lk = amapLinks(it.links);
+  return '<li class="it">'+lead(it, it.type)+'<div class="it-body"><div class="it-text">'+esc(it.text)+'</div>'+
+    (it.note ? '<div class="it-note">'+esc(it.note)+'</div>' : '')+
+    (it.status || btn || lk ? '<div class="row">'+pill(it.status)+btn+lk+'</div>' : '')+'</div></li>';
+}
+function sleepHTML(day){
+  if(day.sleep === 'plane') return '<li class="it"><span class="ic">'+svg('sleep')+'</span><div class="it-body"><div class="it-text">Notte in volo</div><div class="it-note">Si atterra a Shenzhen la mattina dopo.</div></div></li>';
+  if(!day.sleep) return '<li class="it"><span class="ic">'+svg('sleep')+'</span><div class="it-body"><div class="it-text">Si dorme a casa</div><div class="it-note">Fine del viaggio.</div></div></li>';
+  const s = STOPS[day.sleep];
+  const n = '<div class="it-when">Notte '+day.night+' di '+s.nights+' a '+esc(s.name)+'</div>';
+  if(s.stay) return '<li class="it"><span class="ic">'+svg('sleep')+'</span><div class="it-body"><div class="it-text">'+esc(s.stay.name)+'</div>'+n+stayLinks(s.stay)+'</div></li>';
+  return '<li class="it"><span class="ic">'+svg('sleep')+'</span><div class="it-body"><div class="it-text">Alloggio a '+esc(s.name)+'</div>'+n+(s.stayNote ? '<div class="it-note">'+esc(s.stayNote)+'</div>' : '')+'<div class="row">'+pill('manca')+'</div></div></li>';
+}
+const stayLinks = (st) => '<div class="row">'+st.links.map(l => '<a class="lnk" href="'+esc(l.href)+'" target="_blank" rel="noopener">'+(l.icon==='pin' ? svg('pin')+esc(l.label) : (l.icon==='doc' ? svg('doc')+esc(l.label) : esc(l.label)+svg('ext')))+'</a>').join('')+'</div>';
+const moons = (n) => '<div class="moons" aria-hidden="true">'+Array.from({length:n}, () => '<i></i>').join('')+'</div>';
+function renderDays(){
+  let html = '', lastStop = null;
+  DAYS.forEach(day => {
+    const st = STOPS[day.stop];
+    if(day.stop !== lastStop){
+      if(lastStop) html += '</div>';
+      const range = esc(st.dates);
+      html += '<header class="runh" style="--city:'+cityVar(day.stop)+'"><h2>'+esc(st.name)+'</h2><p>'+esc(st.sub||'')+'</p><div class="rd">'+range+(st.nights ? moons(st.nights) : '')+'</div></header><div class="days">';
+      lastStop = day.stop;
+    }
+    const where = day.sleep && STOPS[day.sleep] && day.sleep !== day.stop && STOPS[day.sleep].name !== st.name ? 'Si dorme a '+esc(STOPS[day.sleep].name) : '';
+    const tags = (day.today ? '<span class="tag oggi">Oggi</span>' : '') + (day.tags||[]).map(t => '<span class="tag">'+esc(t)+'</span>').join('');
+    html += '<article class="day'+(day.today?' today':'')+'" id="'+day.id+'" style="--city:'+cityVar(day.stop)+'">'+
+      '<div class="dnum"><span class="n">'+day.dt.getDate()+'</span><span class="w">'+DOW[day.dt.getDay()]+'</span><span class="m">'+MON[day.dt.getMonth()]+'</span></div>'+
+      '<div><div class="dtop"><span>Giorno '+(day.i+1)+' di '+DAYS.length+'</span>'+tags+'</div>'+
+      '<h3 class="dtitle">'+esc(day.title)+'</h3>'+(day.sub ? '<div class="dsub">'+esc(day.sub)+'</div>' : '')+(where ? '<div class="dwhere">'+where+'</div>' : '')+(day.intro ? '<div class="dintro">'+esc(day.intro)+'</div>' : '')+
+      '<ul class="items">'+day.items.map(itemHTML).join('')+sleepHTML(day)+'</ul></div></article>';
+  });
+  html += '</div><p class="foot">Fonte: <a href="'+DOC_URL+'" target="_blank" rel="noopener">Programma di viaggio – Malaysia</a><br>Aggiornato al 24 nov 2026</p>';
+  document.getElementById('v-giorni').innerHTML = html;
+}
+
+/* ===== Vista Tappe ===== */
+function legHTML(id){
+  const l = LEGS[id];
+  return '<div class="leg"><span class="ic">'+svg(l.mode)+'</span><div class="it-body"><div class="leg-t">'+esc(l.text)+'</div><div class="leg-w">'+esc(l.when)+'</div>'+
+    '<div class="row">'+pill(l.status)+(l.link ? '<a class="lnk" href="'+esc(l.link.href)+'" target="_blank" rel="noopener">'+esc(l.link.label)+svg('ext')+'</a>' : '')+'</div>'+
+    (l.note ? '<div class="it-note">'+esc(l.note)+'</div>' : '')+'</div></div>';
+}
+function renderStops(){
+  const legByTo = {}; Object.entries(LEGS).forEach(([k,l]) => legByTo[l.to] = k);
+  const srow = (icon, label, body) => '<div class="srow"><span class="si">'+svg(icon)+'</span><div class="it-body"><span class="srow-l">'+label+'</span>'+body+'</div></div>';
+  let html = '<h2 class="view-h">Le tappe</h2><p class="view-p">Il percorso completo, con alloggi e spostamenti tra una tappa e l’altra.</p><div class="route-v">';
+  html += '<div class="node end" style="--city:var(--c-rome)"><b>Roma Fiumicino</b> <span class="stop-sub">partenza 20 dicembre</span></div>';
+  ROUTE.forEach(id => {
+    const s = STOPS[id];
+    if(legByTo[id]) html += legHTML(legByTo[id]);
+    const foodSrc = s.foodRef ? STOPS[s.foodRef] : s;
+    const nights = s.nights ? '<div class="nights">'+Array.from({length:s.nights}, () => '<i></i>').join('')+'<span>'+s.nights+(s.nights===1?' notte':' notti')+'</span></div>' : '<div class="nights">Nessuna notte: in giornata da Shenzhen</div>';
+    let stay = '';
+    if(s.stay) stay = srow('sleep','Alloggio','<span>'+esc(s.stay.name)+'</span>'+(s.stay.note ? '<span class="it-note">'+esc(s.stay.note)+'</span>' : '')+stayLinks(s.stay));
+    else if(s.stay === null) stay = srow('sleep','Alloggio',(s.stayNote ? '<span class="it-note">'+esc(s.stayNote)+'</span>' : '')+'<div class="row">'+pill('manca')+'</div>');
+    const plan = s.plan ? srow('plan','Piano giornate','<span>'+esc(s.plan)+'</span>'+(s.extra||[]).map(e => '<div class="row">'+pill(e.status)+'<span class="it-note">'+esc(e.text)+'</span></div>').join('')) : '';
+    const fc = foodSrc.food.length;
+    const food = srow('eat','Mangiare','<div class="row">'+(fc ? '<button class="lnk" type="button" data-go="cibo" data-stop="'+(s.foodRef||id)+'">'+fc+' posti salvati</button>' : pill('manca'))+'</div>');
+    const tips = s.tips ? srow('transfer','Trasporti','<ul class="tips">'+s.tips.map(t => '<li>'+esc(t)+'</li>').join('')+'</ul>') : '';
+    html += '<div class="node" style="--city:'+cityVar(id)+'"><div class="stop"><div class="stop-h"><h3 class="stop-name">'+esc(s.name)+'</h3><span class="stop-dates">'+esc(s.dates)+'</span></div>'+
+      '<div class="stop-sub">'+esc(s.sub||'')+'</div>'+nights+'<div class="stop-rows">'+stay+plan+tips+food+'</div></div></div>';
+  });
+  html += legHTML('kl-rm');
+  html += '<div class="node end" style="--city:var(--c-rome)"><b>Roma o Milano</b> <span class="stop-sub">arrivo 5 gennaio</span></div></div>';
+  document.getElementById('v-tappe').innerHTML = html;
+}
+
+/* ===== Vista Cibo ===== */
+function renderFood(){
+  let html = '<h2 class="view-h">Dove mangiare</h2><p class="view-p">I posti salvati, tappa per tappa. In Cina i link aprono Amap, altrove Google Maps.</p>';
+  ROUTE.forEach(id => {
+    const s = STOPS[id]; if(s.foodRef) return;
+    const label = id === 'kul' ? 'Kuala Lumpur <small>25 – 26 dic e 3 – 4 gen</small>' : esc(s.name)+' <small>'+esc(s.dates)+'</small>';
+    html += '<section class="sec" id="food-'+id+'" style="--city:'+cityVar(id)+'"><h3 class="sec-h">'+label+'</h3><div class="list">';
+    if(!s.food.length) html += '<div class="empty">'+pill('manca')+'Nessun posto salvato per ora.</div>';
+    s.food.forEach(f => {
+      html += '<div class="rest"><div><div class="rest-n">'+esc(f.n)+'</div><div class="rest-d">'+esc(f.d)+'</div>'+
+        (f.status ? pill(f.status)+'<div class="rest-d">'+esc(f.note)+'</div>' : '')+'</div>'+
+        (f.maps ? '<a class="lnk" href="'+esc(f.maps)+'" target="_blank" rel="noopener">'+svg('pin')+'Maps</a>' : (f.amap !== undefined ? amapLinks([f.amap]) : '<span></span>'))+'</div>';
+    });
+    html += '</div></section>';
+  });
+  document.getElementById('v-cibo').innerHTML = html;
+}
+
+/* ===== Vista Da sistemare ===== */
+function renderMissing(){
+  const by = {manca:0, decidere:0, verificare:0}; ALL_MISSING.forEach(m => by[m.status]++);
+  let html = '<h2 class="view-h">Da sistemare</h2><div class="sum"><b>'+ALL_MISSING.length+'</b><p>informazioni da completare nel documento prima di partire.</p><div class="row">'+
+    Object.entries(by).filter(e => e[1]).map(([k,v]) => '<span class="st '+k+'">'+ST_LABEL[k]+': '+v+'</span>').join('')+'</div></div>';
+  ROUTE.forEach(id => {
+    const rows = MISSING[id]; if(!rows.length) return;
+    const s = STOPS[id];
+    html += '<section class="sec" style="--city:'+cityVar(id)+'"><h3 class="sec-h">'+esc(s.name)+(id==='kul2'?' <small>ritorno</small>':'')+' <small>'+rows.length+(rows.length===1?' voce':' voci')+'</small></h3><div class="list">';
+    rows.forEach(r => {
+      const attrs = r.day ? 'data-jump="'+r.day.id+'"' : 'data-go="'+r.go+'"'+(r.stop?' data-stop="'+r.stop+'"':'');
+      html += '<button class="mrow" type="button" '+attrs+'><span class="mdate">'+(r.day ? shortDate(r.day) : 'Tappa')+'</span><span><span class="mtext">'+esc(r.text)+'</span>'+
+        (r.note ? '<span class="mnote">'+esc(r.note)+'</span>' : '')+pill(r.status)+'</span></button>';
+    });
+    html += '</div></section>';
+  });
+  document.getElementById('v-mancanti').innerHTML = html;
+}
+
+renderDays(); renderStops(); renderFood(); renderMissing();
+
+/* ===== Navigazione ===== */
+const VIEWS = ['giorni','tappe','cibo','mancanti'];
+const strip = document.getElementById('strip');
+const hero = document.querySelector('.hero');
+let pending = null;
+function show(view){
+  if(!VIEWS.includes(view)) view = 'giorni';
+  VIEWS.forEach(v => { document.getElementById('v-'+v).hidden = v !== view; });
+  document.querySelectorAll('.tab').forEach(t => t.setAttribute('aria-selected', t.dataset.view === view ? 'true' : 'false'));
+  strip.hidden = view !== 'giorni';
+  const target = pending ? document.getElementById(pending) : null;
+  pending = null;
+  if(target) requestAnimationFrame(() => target.scrollIntoView({block:'start'}));
+  else if(window.scrollY > hero.offsetHeight) window.scrollTo({top: hero.offsetHeight, behavior:'auto'});
+}
+function go(view, targetId){
+  pending = targetId || null;
+  if(('#'+view) === location.hash) show(view); else location.hash = view;
+}
+window.addEventListener('hashchange', () => show(location.hash.slice(1)));
+document.addEventListener('click', (e) => {
+  const tab = e.target.closest('.tab'); if(tab){ go(tab.dataset.view); return; }
+  const p = e.target.closest('.pill'); if(p){ document.getElementById(p.dataset.day).scrollIntoView({block:'start'}); return; }
+  const j = e.target.closest('[data-jump]'); if(j){ go('giorni', j.dataset.jump); return; }
+  const g = e.target.closest('[data-go]'); if(g){ go(g.dataset.go, g.dataset.stop && g.dataset.go === 'cibo' ? 'food-'+g.dataset.stop : null); return; }
+});
+document.getElementById('statMiss').addEventListener('click', () => go('mancanti'));
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('button.cp'); if(!b) return;
+  const done = (t, ok) => { b.textContent = t; b.classList.toggle('ok', ok); setTimeout(() => { b.textContent = 'Copia'; b.classList.remove('ok'); }, 1600); };
+  try { navigator.clipboard.writeText(b.dataset.copy).then(() => done('Copiato', true), () => done(b.dataset.copy, false)); }
+  catch(err){ done(b.dataset.copy, false); }
+});
+
+/* evidenzia il giorno visibile nella striscia */
+const pills = {}; document.querySelectorAll('.pill').forEach(p => pills[p.dataset.day] = p);
+const sc = document.getElementById('stripScroll');
+let current = null;
+const dayIO = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if(!en.isIntersecting) return;
+    const id = en.target.id; if(id === current) return;
+    if(current && pills[current]) pills[current].classList.remove('on');
+    current = id; const p = pills[id]; p.classList.add('on');
+    sc.scrollTo({left: p.offsetLeft - sc.clientWidth/2 + p.offsetWidth/2, behavior:'smooth'});
+  });
+}, {rootMargin:'-120px 0px -60% 0px'});
+DAYS.forEach(day => dayIO.observe(document.getElementById(day.id)));
+
+if(TODAY && (!location.hash || location.hash === '#giorni')) pending = TODAY.id;
+show(location.hash.slice(1) || 'giorni');
+}
+</script>
+</body>
+</html>
